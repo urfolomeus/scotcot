@@ -1,0 +1,13 @@
+rails -v 2.3.5
+authlogic
+cucumber
+cucumber-rails
+database_cleaner
+factory_girl
+haml
+nifty-generators
+nokogiri
+rspec
+rspec-rails
+tiny_mce
+webrat
