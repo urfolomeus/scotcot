@@ -70,20 +70,22 @@ a, a:visited {
 }
 
 #content {
-  padding: 1em 3em;
+  position: relative;
+  padding: 1em;
   padding-bottom: 40px;
 }
 
 #main {
-  float: left;
-  width: 60%;
+  float: right;
+  width: 75%;
 }
 
 #sidebar {
   float: left;
-  width: 30%;
-  margin-left: 2em;
+  height: 20em;
+  width: 18%;
   padding: 1em;
+  background-color: #DAF;
 }
 
 #footer {
