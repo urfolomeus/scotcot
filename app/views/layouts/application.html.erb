@@ -8,18 +8,40 @@
     <%= javascript_include_tag 'jquery-1.4.min', 'application', :cache => true %>
   </head>
   <body>
-    <div id="login_controls">
-      <% if current_user -%>
-        <%= link_to "My Account", account_path %> | 
-        <%= link_to "Logout", logout_path %>
-      <% else -%>
-        <%= link_to "Signup", signup_path %> | 
-        <%= link_to "Login", login_path %>
-      <% end -%>
-    </div>
-    <%= render :partial => 'layouts/flashes' -%>
-    <div class="container">
-      <%= yield %>
+    <div id="container">
+      
+      <div id="header">
+        <div id="banner">
+          <h1>Scottish Cottages</h1>
+        </div>
+        <div id="login_controls">
+          <% if current_user -%>
+            <%= link_to "My Account", account_path %> | 
+            <%= link_to "Logout", logout_path %>
+          <% else -%>
+            <%= link_to "Signup", signup_path %> | 
+            <%= link_to "Login", login_path %>
+          <% end -%>
+        </div>
+        <div id="navigation">
+          <ul>
+            <li><%= link_to 'Book It!', root_url, :class => 'selected' %></li>
+            <li><a href="#">Rent It</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div id="main">
+          <%= render :partial => 'layouts/flashes' -%>
+          <%= yield %>
+        </div>
+        <div id="sidebar">
+          <p>sidebar goes here</p>
+        </div>
+      </div>
+      <div id="footer">
+        &copy;2010 Planet Urf
+      </div>
     </div>
   </body>
 </html>
