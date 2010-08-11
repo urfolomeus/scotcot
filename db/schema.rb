@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20100811143451) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "roles_mask"
+    t.integer  "roles_mask",        :default => 0
   end
 
 end

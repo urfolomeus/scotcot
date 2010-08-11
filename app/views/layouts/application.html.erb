@@ -27,7 +27,7 @@
           <div id="navigation">
             <ul>
               <li><%= link_to 'Book It!', root_url, :class => 'selected' %></li>
-              <li><a href="#">Rent It!</a></li>
+              <li><%= link_to 'Rent It!', portfolio_path(:id => current_user.portfolio.id) %></li>
             </ul>
           </div>
         <% end %>

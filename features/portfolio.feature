@@ -15,3 +15,10 @@ Feature: portfolio management
     When I log in 
     Then I should be on the home page
     And I should not see "Rent It!"
+    
+  Scenario: owner should be able to access their portfolio
+    Given I am a cottage owner
+    And I am logged in
+    When I follow "Rent It!"
+    Then I should be on the portfolio page
+    And I should see "Alan's Portfolio Dashboard"

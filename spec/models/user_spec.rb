@@ -25,12 +25,12 @@ describe User do
   end
   
   context "#is_owner?" do
-    it "should return true if user has role 'rent'" do
+    it "should return true if user has role 'rent_out'" do
       user = Factory.create(:owner)
       user.is_owner?.should be_true
     end
     
-    it "should return false if user doesn't have role 'rent'" do
+    it "should return false if user doesn't have role 'rent_out'" do
       user = Factory.create(:valid_user)
       user.is_owner?.should be_false
     end

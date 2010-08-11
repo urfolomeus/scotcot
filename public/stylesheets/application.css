@@ -39,6 +39,7 @@ a, a:visited {
 
 #login_controls {
   float: right;
+  margin-top: -1em;
 }
 
 #navigation {
@@ -78,6 +79,33 @@ a, a:visited {
 #main {
   float: right;
   width: 75%;
+}
+
+#main p, #main h1, #main h2 {
+  margin-bottom: 1em;
+}
+
+img {
+  margin: 1em;
+}
+
+img.left {
+  float: left;
+}
+
+img.right {
+  float: right;
+}
+
+label {
+  margin-bottom: .6em;
+}
+
+input {
+  margin-top: .4em;
+  margin-right: .6em;
+  padding: .4em;
+  font-size: 1.2em;
 }
 
 #sidebar {

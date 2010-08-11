@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   # when adding roles, make sure to add them to the end sp as not to upset
   # the current bitwise indexing!
-  ROLES = %w[admin book rent]
+  ROLES = %w[admin book rent_out]
   
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
@@ -25,6 +25,6 @@ class User < ActiveRecord::Base
   end
   
   def is_owner?
-    self.roles.include?('rent')
+    self.roles.include?('rent_out')
   end
 end

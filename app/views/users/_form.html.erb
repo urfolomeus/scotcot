@@ -17,7 +17,7 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
-    <%= f.label :roles, "I want to be to ..." %>
+    <%= f.label :roles, "I want to ..." %>
     <br />
     <% for role in User::ROLES %>
       <% unless role == 'admin' %>

@@ -13,5 +13,5 @@ Factory.define :owner, :class => User do |u|
   u.password "pass"
   u.password_confirmation "pass"
   u.email "alan@scotcot.com"
-  u.roles ["rent"]
+  u.roles ["rent_out"]
 end
