@@ -11,3 +11,4 @@ rspec
 rspec-rails
 tiny_mce
 webrat
+cancan
