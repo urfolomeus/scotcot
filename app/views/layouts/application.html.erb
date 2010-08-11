@@ -3,14 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Application</title>
+    <title><%= yield(:title) || "ScotCot.com" %></title>
     <%= stylesheet_link_tag 'application', :media => 'all', :cache => true %>
     <%= javascript_include_tag 'jquery-1.4.min', 'application', :cache => true %>
   </head>
   <body>
+    <div id="login_controls">
+      <% if current_user -%>
+        <%= link_to "My Account", account_path %> | 
+        <%= link_to "Logout", logout_path %>
+      <% else -%>
+        <%= link_to "Signup", signup_path %> | 
+        <%= link_to "Login", login_path %>
+      <% end -%>
+    </div>
     <%= render :partial => 'layouts/flashes' -%>
     <div class="container">
-      <p>Sample layout in effect - fill me in!</p>
       <%= yield %>
     </div>
   </body>
