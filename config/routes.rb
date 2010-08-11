@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'welcome'
 
-  map.resource :user_session
+  map.resource :user_session, :portfolio
   map.resources :users
 
   map.login     '/login',     :controller => 'user_sessions', :action => 'new'
