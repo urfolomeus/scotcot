@@ -23,11 +23,11 @@
             <%= link_to "Login", login_path %>
           <% end -%>
         </div>
-        <% if can? :manage, @portfolio %>
+        <% if can? :manage, Portfolio %>
           <div id="navigation">
             <ul>
               <li><%= link_to 'Book It!', root_url, :class => 'selected' %></li>
-              <li><%= link_to 'Rent It!', portfolio_path(:id => current_user.portfolio.id) %></li>
+              <li><%= link_to 'Rent It!', portfolio_path(current_user.portfolio.id) %></li>
             </ul>
           </div>
         <% end %>

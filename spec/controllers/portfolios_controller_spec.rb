@@ -5,6 +5,8 @@ describe PortfoliosController do
   describe "GET 'show'" do
     before(:each) do
       @portfolio = Factory.create(:portfolio)
+      contoller = mock_model(ApplicationController)
+      controller.stub(:current_user).and_return(Factory.create(:owner))
     end
     
     it "should be successful" do

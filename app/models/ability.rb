@@ -2,10 +2,13 @@ class Ability
   include CanCan::Ability
   
   def initialize(user)
-    if user.nil?
+    user ||= User.new
+      
+    if user.is_owner?
+      can :manage, Portfolio
+    else
       can :read, :all
-    elsif user.is_owner?
-      can :manage, @portfolio
+      cannot :read, Portfolio
     end
   end
 end

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   end
   
   has_one :portfolio
-  
+  after_save :create_portfolio_for_user
   named_scope :with_role, 
               lambda { |role| { :conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
   
@@ -20,11 +20,13 @@ class User < ActiveRecord::Base
     ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
   end
   
-  def portfolio
-    @portfolio ||= self.create_portfolio
-  end
-  
   def is_owner?
     self.roles.include?('rent_out')
+  end
+  
+  private
+  
+  def create_portfolio_for_user
+    self.create_portfolio if self.is_owner? && portfolio.nil?
   end
 end
